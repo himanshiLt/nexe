@@ -10,4 +10,7 @@ preRun:
     - npm install                   # Mention pre-run steps here
 postRun:
     - node --version                # Mention post-run steps here
+blocklist:
+    - 'test/options.spec.ts##options##output'
+    - 'test/options.spec.ts##options##remote##should use default remote'
 version: 2.0
