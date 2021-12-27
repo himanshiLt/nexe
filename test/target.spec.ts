@@ -23,7 +23,7 @@ describe('Targets', () => {
     })
   })
 
-  it.skip('should stringify and toString', () => {
+  it('should stringify and toString', () => {
     expect(JSON.stringify(getTarget(process))).to.equal(`"${getTarget(process)}"`)
   })
 })
