@@ -1,19 +1,16 @@
----
 framework: mocha
-licenseTier: xsmall
+blocklist:
+  - "./test/target.spec.ts##Targets##should stringify and toString"
+preRun:
+  command:
+    - npm install         
 postMerge:
-  pattern:
+  pattern: 
     - "./test/*.spec.ts"
-  strategy:
-    threshold: <5|100s|30m|6h>
-    type: <commit|time>
 preMerge:
   pattern:
     - "./test/*.spec.ts"
-preRun:
-     command:
-        - npm install
 postRun:
-     command:
-        - node --version
-version: 2.1
+  command:
+    - node --version
+version: 1.0
