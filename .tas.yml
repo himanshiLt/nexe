@@ -1,18 +1,17 @@
 ---
 framework: mocha
-licenseTier: xsmall
-postMerge:
-  pattern:
-    - "./test/*.spec.ts"
-  strategy:
-    threshold: <5|100s|30m|6h>
-    type: <commit|time>
+postMerge: 
+  pattern: 
+    - "./test/**/*.spec.ts"
+  strategy: 
+    threshold: 1
+    name: after_n_commits
 preMerge:
   pattern:
-    - "./test/*.spec.ts"
+    - "./test/**/*.spec.ts"
 preRun:
      command:
-        - npm install
+        - npm ci
 postRun:
      command:
         - node --version
